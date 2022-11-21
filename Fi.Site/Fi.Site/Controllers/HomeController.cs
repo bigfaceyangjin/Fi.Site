@@ -13,17 +13,35 @@ namespace Fi.Site.Controllers
 			return View();
 		}
 
-		public ActionResult About()
+		public ActionResult Top()
 		{
 			ViewBag.Message = "Your application description page.";
 
 			return View();
 		}
 
-		public ActionResult Contact()
+		public ActionResult Left()
 		{
 			ViewBag.Message = "Your contact page.";
 
+			return View();
+		}
+		public ActionResult Right()
+		{
+			ViewBag.Message = "Your contact page.";
+
+			return View();
+		}
+		public ActionResult Bottom()
+		{
+			return View();
+		}
+		public ActionResult ErJi()
+		{
+			return View();
+		}
+		public ActionResult LeftTest()
+		{
 			return View();
 		}
 	}

@@ -1,0 +1,55 @@
+﻿
+/*导航栏*/
+.nav_aside{
+    width:300px;
+    background-color:#333;
+    color:#fff;
+    position:fixed;
+    top:0;
+    bottom:0;
+}
+
+/*导航标题*/
+.nav_title {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 1px solid #222;
+}
+
+/*父导航*/
+.nav_aside .nav_list .parentNav{
+    height:60px;
+    line-height:60px;
+    font-size:18px;
+    cursor:pointer;
+    padding:0px 16px;
+}
+.nav_aside .nav_list .parentNav:hover{
+    background-color:#222;
+}
+.nav_aside .nav_list .parentNav i:last-child{
+    float:right;
+}
+
+/*子导航*/
+.nav_aside .nav_list .sonNav li a{
+    color:#fff;
+    padding-left:60px;
+    height:40px;
+    line-height:40px;
+    font-size:15px;
+    display:inline-block;
+    box-sizing:border-box;
+    width:100%;
+}
+.nav_aside .nav_list .sonNav li a:hover,.nav_aside .nav_list .item.active .parentNav{
+    background-color:#222;
+}
+.nav_aside .nav_list .sonNav{
+    display:none;
+}
+.nav_aside .nav_list .item.active .sonNav{
+    display:block;
+}

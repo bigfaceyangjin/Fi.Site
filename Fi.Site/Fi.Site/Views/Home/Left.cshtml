@@ -1,0 +1,123 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LeftTest</title>
+    <link href="~/Content/common.css" rel="stylesheet" />
+    <link href="~/Content/left.css" rel="stylesheet" />
+    <link href="~/Content/iconfont/iconfont.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    @* 侧边栏*@
+    <div class="nav_aside">
+        @* 导航标题 *@
+        <div class="nav_title">魔速达财务系统V1.1</div>
+
+        @*导航列表*@
+        <ul class="nav_list">
+            <li class="item ">
+                <div class="parentNav">
+                    <i class="iconfont icon-liebiao"></i>
+                    <span>客户管理</span>
+                    <i class="iconfont icon-xiangxia"></i>
+                </div>
+                <ul class="sonNav">
+                    <li><a href="#">客户信息</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <div class="parentNav">
+                    <i class="iconfont icon-liebiao"></i>
+                    <span>系统管理</span>
+                    <i class="iconfont icon-xiangxia"></i>
+                </div>
+                <ul class="sonNav">
+                    <li><a href="#">账号管理</a></li>
+                </ul>
+            </li>
+            <li class="item active">
+                <div class="parentNav">
+                    <i class="iconfont icon-liebiao"></i>
+                    <span>应收管理</span>
+                    <i class="iconfont icon-xiangxia"></i>
+                </div>
+                <ul class="sonNav">
+                    <li><a href="#">其它费用导入</a></li>
+                    <li><a href="#">提单费用列表</a></li>
+                    <li><a href="#">税费结算</a></li>
+                    <li><a href="#">身份证费用列表</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <div class="parentNav">
+                    <i class="iconfont icon-liebiao"></i>
+                    <span>对账管理</span>
+                    <i class="iconfont icon-xiangxia"></i>
+                </div>
+                <ul class="sonNav">
+                    <li><a href="#">成本导入</a></li>
+                    <li><a href="#">运单对账单</a></li>
+                    <li><a href="#">提单对账单</a></li>
+                    <li><a href="#">费用调整</a></li>
+                    <li><a href="#">身份证对账单</a></li>
+                    <li><a href="#">运单异常数据</a></li>
+                    <li><a href="#">提单异常数据</a></li>
+                    <li><a href="#">身份证异常数据</a></li>
+                </ul>
+            </li>
+            <li class="item">
+                <div class="parentNav">
+                    <i class="iconfont icon-liebiao"></i>
+                    <span>统计报表管理</span>
+                    <i class="iconfont icon-xiangxia"></i>
+                </div>
+                <ul class="sonNav">
+                    <li><a href="#">月结表</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var that;
+        class asideClass {
+            constructor(className) {
+                that = this;
+                //主区域
+                this.main = document.querySelector(className);
+                //导航列表项
+                this.lis = this.main.querySelectorAll(".nav_list .item");
+                //父导航
+                this.parentNavs = this.main.querySelectorAll(".nav_list .item .parentNav");
+                for (var i = 0; i < this.parentNavs.length; i++) {
+                    this.parentNavs[i].onclick = this.toggleNav;
+                }
+            }
+            //父导航点击函数
+            toggleNav() {
+                if (this.parentNode.classList.contains("active")) {
+                    this.parentNode.classList.remove("active");
+                }
+                else {
+                    //先关闭所有 再开启当前下拉
+                    that.clearClass();
+                    this.parentNode.classList.add("active");
+                }
+            }
+            clearClass() {
+                for (var i = 0; i < this.parentNavs.length; i++) {
+                    this.parentNavs[i].parentNode.classList.remove("active");
+                    //this.lis[i].className = "item";
+                }
+            }
+        }
+        var aside = new asideClass(".nav_aside");
+    </script>
+</body>
+</html>

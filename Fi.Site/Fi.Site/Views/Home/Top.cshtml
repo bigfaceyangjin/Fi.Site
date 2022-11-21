@@ -1,0 +1,96 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Top</title>
+    <link href="~/Content/SharedStyle.css" rel="stylesheet"/>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".nav_list ul li a").click(function () {
+                //$(".nav_list ul li a").css("color", "#ceebff");
+                //$(this).css("color", "yellow");
+                $(".nav_list ul li a").css("background-color", "");
+                $(".nav_list ul li a").css("color", "#fff");
+                $(this).css("background-color", "#333");
+                $(this).css("color", "white");
+            });
+        })
+    </script>
+    <style type="text/css">
+        /*导航标题*/
+        .nav_title {
+            height: 60px;
+            line-height: 60px;
+            width: 300px;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+            background-color: #444;
+            border-bottom: 1px solid #333;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="index_header">
+        @*<div class="nav_title">
+            魔速达财务系统V1.1
+        </div>*@
+        <div class="index_headertop">
+
+            <div class="lgstatus">
+                <i><em>20</em></i>可用余额：<span>￥@ViewBag.AvailableBalance</span>&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="在线充值" class="btsty2">
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="index_headerbot">
+            <div class="nav_list">
+                <ul>
+                    <li>
+                        <a href="#">业务管理</a>
+                        <div class="nav_out" style="display:none;">
+                            <i></i>
+                            <p><a href="#">订单管理</a></p>
+                            <p><a href="#">提单管理</a></p>
+                            <p><a href="#">身份证管理</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="slctd">财务管理</a>
+                        <div class="nav_out" style="display:none;">
+                            <i></i>
+                            <p><a href="#">财务流水</a></p>
+                            <p><a href="#">提单对账</a></p>
+                            <p><a href="#">运单对账</a></p>
+                            <p><a href="#">异常费用对账</a></p>
+                            <p><a href="#">充值记录</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">系统管理</a>
+                        <div class="nav_out" style="display:none;">
+                            <i></i>
+                            <p><a href="#">基本信息管理</a></p>
+                            <p><a href="#">认证管理</a></p>
+                            <p><a href="#">修改密码</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="fucnbx">
+                <span><i class="i1"></i><a href="#">运单打印客户端下载</a></span>
+                <span><i class="i2"></i><a href="#">API文档</a></span>
+                <span><i class="i3"></i><a href="#">退出</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

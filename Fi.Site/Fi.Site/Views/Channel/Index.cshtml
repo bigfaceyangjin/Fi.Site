@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/libs/DataTables-1.10.6/media/css/jquery.dataTablesNew.css" rel="stylesheet" />
+<script src="~/libs/DataTables-1.10.6/media/js/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/CusDataTable.js"></script>
+<script type="text/javascript">
+    var dg;
+    function ShowDialog() {
+        dg = new $.dialog({
+            id: "AddChannel",
+            title: "添加渠道",
+            width: 424,
+            height: 320,
+            content: "url:/Channel/AddChannel",
+            max: false,
+            min: false,
+            lock: true,
+            close: true,
+            cancel: true,
+            ok: function () {
+                alert();
+            }
+        });
+    }
+    //document.onkeydown = function (event) {
+    //    var e = event || window.event || arguments.callee.callee.arguments[0];
+    //    if (e && e.keyCode == 27) {
+    //        //Esc
+    //        alert('Esc');
+    //    }
+    //    if (e && e.keyCode == 13) {
+    //        //回车键
+    //        reloadTable();
+    //    }
+    //}
+    function reloadTable() {
+        var tables = $("#tb").dataTable().api().ajax.reload();
+    }
+</script>
+<div class="areabx">
+    @using (Html.BeginForm("List", "Channel", FormMethod.Post,new { @class="form-inline",@role="form"}))
+    {
+        <div class="areabx_header">渠道管理</div>
+        <ul class="formod mgt10">
+            <li>
+                <span>渠道代码</span>
+                @Html.TextBox("ChannelCode", null, new { @class = "trade-time wid153" })
+            </li>
+            <li>
+                <span>中文名</span>
+                @Html.TextBox("CnName", null, new { @class = "trade-time" })
+            </li>
+            <li>
+                <span>英文名</span>
+                @Html.TextBox("EnName", null, new { @class = "trade-time" })
+            </li>
+        </ul>
+        <div class="botbtbx pdb0">
+            <input type="button" value="添加渠道" class="btn btn-primary" onclick="ShowDialog();"/>
+            <input type="button" value="查询" class="btn btn-primary" onclick="reloadTable();"/>
+        </div>
+    }
+    <div class="tob_box mgt15">
+        <table id="tb">
+
+        </table>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        var h = $(document).height() - 269;//表格高度
+        $("#tb").dataTable({
+            "iDisplayLength": 20,//每页显示10条数据
+            //"aLengthMenu": "[{10,15,20,25,50,-1},{10,15,20,25,50,ALL}]",
+            //"bProcessing": false,
+            //"dom": 'i,p',//每页显示行数下拉框的条件
+            "scrollY": h,//垂直高度
+            "scrollCollapse": false,//开启滚动
+            "dom": 'tr<"bottom"lip><"clear">',//控制布局的  控制"每页显示下拉框"在左上还是左下
+            "bServerSide": false,//指定从服务器端获取数据
+            sServerMethod:"Post",//请求方式
+            sAjaxSource: "@Url.Action("List", "Channel")",//数据源
+            "fnServerParams": function (data) {//查询条件
+                data.push(
+                    { "name": "ChannelCode", "value": $("#ChannelCode").val()},
+                    { "name": "CnName", "value": $("#CnName").val()},
+                    { "name": "EnName", "value": $("#EnName").val() }
+                );
+            },
+            columns:
+            [
+                {
+                    title: "<input type='checkbox' id='cbxAll' class='cbx'/>全选",
+                    "visible": true,
+                    "data": "Id", "sClass": "center",//样式
+                    orderable: false,//不排序
+                    "render": function (data, type, row) {//咧渲染
+                        return "<input id='cbx" + data + "' type='checkbox' class='cbx' value='" + data + "'/>";
+                    }
+                    },
+                    { "data": "ChannelCode", "title": "渠道代码" },
+                    { "data": "ChannelStyle", "title": "渠道类别" },
+                    { "data": "CnName", "title": "中文名" },
+                    { "data": "EnName", "title": "英文名" },
+                    {
+                        "data": "Status", "title": "是否启用", orderable: false, "render": function (data, type, row, meta) {
+                            if (data == '1') {
+                                return "是";
+                            }
+                            else {
+                                return "否";
+                            }
+                        }
+                    },
+                    {
+                        "data": "Id", orderable: false, title: "操作", render: function (data, type, row, meta) {
+                            return "<a style='visibility:visible;' onclick='DeleteRecord(" + data+")'>删除</a>";
+                        }
+                    }
+                ],
+            paging: true,//分页
+            ordering: true,//是否启用排序
+            searching: true,//搜索
+            language: {
+                //lengthMenu: '每页显示<select class="form-control input-xsmall">' + '<option value="5">5</option>' + '<option value="10">10</option>' + '<option value="15">15</option>' + '<option value="20">20</option>' + '<option value="25">25</option>' + '<option value="30">30</option>' + '<option value="35">35</option>' + '<option value="40">40</option>' + '</select>',
+                lengthMenu: lengthMenuStr,
+                search: '<span class="label label-success">搜索</span>',//右上角搜索标签，可写html
+                paginate: {
+                    previous: "上一页",
+                    next: "下一页",
+                    first: "Y",
+                    last:"J"
+                },
+                zeroRecords: "暂无数据",//table内容为空时显示的内容
+                //下面三者构成左下角的内容
+                //info: "总共<span class='pagesStyle'>(_PAGES_) </span>页显示_START_ -- _END_,共<span class='recordsStyle'>_TOTAL_条</span>",
+                info: infoStr,
+                infoEmpty: "0条记录",
+                infoFiltered:""
+            },
+            pagingType:"full_numbers"
+        });
+        //监听datatable行点击事件
+        $("#tb tbody").on("click", "tr", function () {
+            var cbx = $(this).find('td:first-child input:checkbox')[0];
+            //反选Checkbox
+            cbx.checked = !cbx.checked;
+
+            //点击时选中本行 同时取消其他行的选中
+            if (cbx.checked) {
+                $("#" + cbx.id).parent().parent().addClass('selected');
+            }
+            else {
+                $('#' + cbx.id).parent().parent().removeClass('selected');
+            }
+        });
+        //全选按钮
+        $("#cbxAll").on('click', function () {
+            //console.log($(this)[0].checked);
+
+            //所有CheckBox对象
+            var obj = GetCheckBoxs();
+            if ($(this)[0].checked)
+            {
+                console.log("#" + obj[1].id);
+                $("#tb tr").addClass('selected');
+                $("#tb input").attr("checked", "checked");
+            }
+            else
+            {
+                $("#tb tr").removeClass('selected');
+                $("#tb input").attr("checked", false);
+            }
+        })
+
+        //CheckBox
+        $("#tb tbody").on('click', 'input[type="checkbox"]', function () {
+            //console.log(this.checked);
+            this.checked = !this.checked;
+        })
+        //删除
+        function DeleteRecord(id) {
+            $.dialog.confirm('确定要删除吗？', function () { $.dialog.alert('删除成功'); reloadTable(); }, function () { alert('点击了取消'); });
+        }
+    </script>
+    }

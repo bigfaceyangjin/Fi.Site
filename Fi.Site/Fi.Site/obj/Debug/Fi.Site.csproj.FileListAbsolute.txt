@@ -85,8 +85,8 @@ D:\朱展\Work\财务对账系统\Fi.Site\Fi.Site\bin\zh-Hans\System.Web.WebPage
 D:\朱展\Work\财务对账系统\Fi.Site\Fi.Site\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
 D:\朱展\Work\财务对账系统\Fi.Site\Fi.Site\bin\zh-Hans\System.Web.Http.resources.dll
 D:\朱展\Work\财务对账系统\Fi.Site\Fi.Site\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
-D:\朱展\Work\财务对账系统\Fi.Site\Fi.Site\obj\Debug\Fi.Site.csprojAssemblyReference.cache
 D:\朱展\Work\财务对账系统\Fi.Site\Fi.Site\obj\Debug\Fi.Site.csproj.CoreCompileInputs.cache
 D:\朱展\Work\财务对账系统\Fi.Site\Fi.Site\obj\Debug\Fi.Site.csproj.CopyComplete
 D:\朱展\Work\财务对账系统\Fi.Site\Fi.Site\obj\Debug\Fi.Site.dll
 D:\朱展\Work\财务对账系统\Fi.Site\Fi.Site\obj\Debug\Fi.Site.pdb
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Site\obj\Debug\Fi.Site.csprojAssemblyReference.cache

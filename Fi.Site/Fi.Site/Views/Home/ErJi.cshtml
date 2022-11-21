@@ -1,0 +1,213 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>锦锦锦锦锦锦锦</title>
+    <link href="~/Content/iconfont/iconfont.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        /*去除默认样式*/
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .aside {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 300px;
+            background: #333;
+            color: white;
+        }
+
+        .main {
+            padding-left: 300px;
+        }
+        /*导航标题*/
+        .nav_title {
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+            font-size: 24px;
+        }
+        /*导航列表*/
+        /*父导航*/
+        .aside .list .parentNav {
+            height: 70px;
+            line-height: 70px;
+            padding: 0px 16px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+            .aside .list .parentNav:hover {
+                background-color: #222;
+            }
+
+            .aside .list .parentNav i:last-child {
+                float: right;
+            }
+
+        /*子导航*/
+        .aside .list .sonNav li a {
+            color: #fff;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 60px;
+        }
+
+            .aside .list .sonNav li a:hover, .aside .list .item.active .parentNav {
+                background-color: #222;
+            }
+
+        .aside .list .sonNav {
+            display: none;
+        }
+
+        .aside .list .item.active .sonNav {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!--左侧导航栏-->
+    <div class="aside">
+        <div class="nav_title">
+            锦锦系统V1.1
+        </div>
+        <!--导航列表-->
+        <ul class="list">
+            <li class="item ">
+                <!--父导航-->
+                <div class="parentNav">
+                    <i class="iconfont icon-liebiao"></i>
+                    <span>内容管理</span>
+                    <i class="iconfont icon-xiangxia"></i>
+                </div>
+                <!--子导航-->
+                <ul class="sonNav">
+                    <li>
+                        <a href="#">文章管理</a>
+                    </li>
+                    <li>
+                        <a href="#">用户管理</a>
+                    </li>
+                    <li>
+                        <a href="#">区域代码</a>
+                    </li>
+                    <li>
+                        <a href="#">组织机构</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item">
+                <!--父导航-->
+                <div class="parentNav">
+                    <i class="iconfont icon-liebiao"></i>
+                    <span>内容管理</span>
+                    <i class="iconfont icon-xiangxia"></i>
+                </div>
+                <!--子导航-->
+                <ul class="sonNav">
+                    <li>
+                        <a href="#">文章管理</a>
+                    </li>
+                    <li>
+                        <a href="#">用户管理</a>
+                    </li>
+                    <li>
+                        <a href="#">区域代码</a>
+                    </li>
+                    <li>
+                        <a href="#">组织机构</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item">
+                <!--父导航-->
+                <div class="parentNav">
+                    <i class="iconfont icon-liebiao"></i>
+                    <span>内容管理</span>
+                    <i class="iconfont icon-xiangxia"></i>
+                </div>
+                <!--子导航-->
+                <ul class="sonNav">
+                    <li>
+                        <a href="#">文章管理</a>
+                    </li>
+                    <li>
+                        <a href="#">用户管理</a>
+                    </li>
+                    <li>
+                        <a href="#">区域代码</a>
+                    </li>
+                    <li>
+                        <a href="#">组织机构</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--主体部分-->
+    <div class="main">
+        test data
+    </div>
+
+    <script type="text/javascript">
+        /* 采用面向对象的方式 ES6的语法 */
+        var that;
+        class assideNav {
+            constructor(className) {
+                that = this;
+                this.main = document.querySelector(className);//获取主区域
+                this.lis = this.main.querySelectorAll(".list .item");//获取导航列表项Li
+                this.parentNavs = this.main.querySelectorAll(".list .item .parentNav");//父导航
+                this.init();
+            }
+            init() {
+                //父导航 点击事件
+                for (var i = 0; i < this.lis.length; i++) {
+                    this.parentNavs[i].onclick = this.toggleNav;
+                }
+            }
+            clearClass() {
+                for (var i = 0; i < this.lis.length; i++) {
+                    this.lis[i].className = "item";
+                }
+            }
+            toggleNav() {
+                var li = this.parentNode;//点击的是父导航 给当前Li节点添加active类 让其子节点block
+                //如果当前Li已经有active属性 则直接去除属性即可
+                if (li.classList.contains("active")) {
+                    //li.className = "item";
+                    li.classList.remove("active");
+                }
+                else {
+                    that.clearClass();//先关闭所以下拉选项 注意this指向问题 这里写this代表的是当前点击的parentNav
+                    li.classList.add("active");
+                }
+            }
+        }
+        var asideNav = new assideNav(".aside");
+    </script>
+</body>
+</html>

@@ -1,31 +1,40 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "魔速达财务系统";
+    Layout = null;
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>
+        @ViewBag.Title
+    </title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        function HideShowFrame() {
+            if (document.getElementById("middenFram").cols == "300,*")
+            {
+                document.getElementById("middenFram").cols = "0,*"
+            }
+            else {
+                document.getElementById("middenFram").cols = "300,*"
+            }
+        }
+    </script>
+</head>
+<frameset rows="*,30" cols="*" frameborder="no" border="0" framespacing="0">
+    <frameset cols="300,*" frameborder="no" border="0" framespacing="0" id="middenFram">
+        <frame src="/Home/LeftTest" name="leftFrame" scrolling="No" noresize="noresize" id="leftFrame" title="leftFrame" />
+        <frameset rows="104,*" cols="*">
+            <frame src="/Home/Top" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
+            <frame src="/Home/Right" name="mainFrame" id="mainFrame" title="mainFrame" height="100%" />
+        </frameset>
+    </frameset>
+    <frame src="/Home/Bottom" name="topFrame" scrolling="No" noresize="noresize" id="bootomFrame" title="topFrame" />
+</frameset>
+<noframes>
+    <body>
+    </body>
+</noframes>
+</html>

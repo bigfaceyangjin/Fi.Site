@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .aside {
+            float: left;
+            height: 500px;
+        }
+
+        .btn {
+            width: 18px;
+            height: 70px;
+            margin-top: 200px;
+            background-image: url(../../images/side.jpg);
+            background-position: 0 -6px;
+            border-radius: 0 10px 10px 0;
+            float: left;
+        }
+
+    </style>
+    <link href="~/libs/CleverTabs/context/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+    @*<script src="~/Scripts/jquery-3.3.1.min.js"></script>*@
+    <script src="~/libs/CleverTabs/scripts/jquery-ui.js"></script>
+    <script src="~/libs/CleverTabs/scripts/jquery.cleverTabs.js"></script>
+    <script src="~/libs/CleverTabs/scripts/jquery.contextMenu.js"></script>
+    <script type="text/javascript">
+        var tabs;
+        $(function () {
+            
+            tabs = $('#tabs').cleverTabs({
+                lock: true
+            });
+            $("#tabs").height($(document).height()-30);
+            $(window).bind('resize', function () {
+                tabs.resizePanelContainer();
+            }); 
+            tabs.add({
+                url: '/Channel/Index',
+                label: '渠道管理'
+            });
+            //$('input[type="button"]').button();
+
+            $(".btn").click(function () {
+                self.parent.HideShowFrame();
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="aside">
+        <div class="btn">
+
+        </div>
+    </div>
+    <div id="tabs" style="overflow: hidden; padding-top: 0px;">
+        <ul></ul>
+    </div>
+
+
+
+
+
+
+
+
+    @*<div class="sidebar fleft">
+        <div class="btn" id="divFolding" title="折叠/展开"></div>
+    </div>
+    <div id="tabs" style="overflow: hidden; padding-top: 0px;height:98.5%">
+        
+    </div>*@
+</body>
+</html>

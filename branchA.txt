@@ -1,1 +1,2 @@
 AAAAAAAAAAA	BranchMain	A
+AAAAAAAAAAA	BranchB	A

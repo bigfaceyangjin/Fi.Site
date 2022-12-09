@@ -1,3 +1,0 @@
-
-AAAAAAAAAAA	BranchMain	A
-TTTTTTTTTT	BranchB	TTTT

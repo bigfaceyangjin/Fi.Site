@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>63200127-0f03-4d13-b555-5ea668bd76c5</ProjectGuid>
+    <ProjectGuid>47f7c22e-2e64-43b7-99cf-5973032dde56</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Fi.Business</RootNamespace>

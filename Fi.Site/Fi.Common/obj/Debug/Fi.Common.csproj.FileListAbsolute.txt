@@ -1,0 +1,5 @@
+E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Common\bin\Debug\Fi.Common.dll
+E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Common\bin\Debug\Fi.Common.pdb
+E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.csproj.CoreCompileInputs.cache
+E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.dll
+E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.pdb

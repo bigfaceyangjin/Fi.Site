@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="ProjectBase.Data" namespace="ProjectBase.Data.Entities">
+  <!--类的全称、程序集、数据库表名称-->
+  <class name="Fi.Business.Entities.Customer,Fi.Business" table="customerinfo">
+    <id name="ID" column="ID" type="int"/>
+    <property name="Cus_Code" column="Cus_Code" type="string"/>
+    <property name="Cus_Name" column="Cus_Name" type="string"/>
+    <property name="Phone" column="Phone" type="string"/>
+    <property name="Tel" column="Tel" type="string"/>
+    <property name="Email" column="Email" type="string"/>
+    <property name="Fax" column="Fax" type="string"/>
+    <property name="Country" column="Country" type="string"/>
+    <property name="Address" column="Address" type="string"/>
+    <property name="CompanyName" column="CompanyName" type="string"/>
+    <property name="Balance" column="Balance" type="decimal"/>
+    <property name="CreditAmount" column="CreditAmount" type="decimal"/>
+    <property name="Status" column="Status" type="int"/>
+    <property name="BusssinessType" column="BusssinessType" type="int"/>
+  </class>
+</hibernate-mapping>

@@ -79,10 +79,10 @@
         var h = $(document).height() - 222;//表格高度
         $("#tb").dataTable({
             "iDisplayLength": 10,//每页显示10条数据
-            //"aLengthMenu": "[{10,15,20,25,50,-1},{10,15,20,25,50,ALL}]",
+            //"aLengthMenu": "[{10,15, 20,25,50,-1},{10,15,20,25,50,ALL}]",
             //"bProcessing": false,
             //"dom": 'i,p',//每页显示行数下拉框的条件
-            "scrollY": h,//垂直高度
+            "scrollY": h,//垂直高度`
             "scrollCollapse": false,//开启滚动
             "dom": 'tr<"bottom"lip><"clear">',//控制布局的  控制"每页显示下拉框"在左上还是左下
             "bServerSide": false,//指定从服务器端获取数据
@@ -97,12 +97,13 @@
             },
             columns:
             [
-                {
+                  {
                     title: "<input type='checkbox' id='cbxAll' class='cbx'/>全选",
                     "visible": true,
                     "data": "Id", "sClass": "center",//样式
                     orderable: false,//不排序
-                    "render": function (data, type, row) {//列渲染
+                    "render": function (data, type, row)
+                    {//列渲染
                         return "<input id='cbx" + data + "' type='checkbox' class='cbx' value='" + data + "'/>";
                     }
                     },

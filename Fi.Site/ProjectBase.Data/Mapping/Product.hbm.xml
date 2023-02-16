@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="ProjectBase.Data" namespace="ProjectBase.Data.Entities">
+  <!--类的全称、所在程序集、数据库表名称-->
+  <class name="Fi.Business.Entities.Product,Fi.Business" table="demo_product">
+    <id name="ID" column="ID" type="int"/>
+    <property name="ProductName" column="ProductName" type="string"/>
+    <property name="Price" column="Price" type="int"/>
+  </class>
+</hibernate-mapping>

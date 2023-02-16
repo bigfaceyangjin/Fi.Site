@@ -42,13 +42,22 @@
             tabs = $('#tabs').cleverTabs({
                 lock: true
             });
-            $("#tabs").height($(document).height()-10);
+            $("#tabs").height($(document).height() - 10);
+
+            //监听窗体大小
+            //function eventR() {
+            //    var wd = window.innerWidth;
+            //    var hg = window.innerHeight;
+            //    console.log(wd + '  ' + hg);
+            //}
             $(window).bind('resize', function () {
                 tabs.resizePanelContainer();
+                //eventR();
             }); 
             tabs.add({
                 url: '/Channel/Index',
-                label: '渠道管理'
+                label: '渠道管理',
+                lock:false
             });
             //$('input[type="button"]').button();
 
@@ -56,6 +65,12 @@
                 self.parent.HideShowFrame();
             });
         });
+        function addTabs(url, name) {
+            tabs.add({
+                url: url,
+                label:name
+            });
+        }
     </script>
 </head>
 <body>

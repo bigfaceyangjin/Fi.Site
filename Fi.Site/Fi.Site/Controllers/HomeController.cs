@@ -16,6 +16,7 @@ namespace Fi.Site.Controllers
 		public ActionResult Top()
 		{
 			ViewBag.Message = "Your application description page.";
+			ViewBag.Info = "Giving up is for rookies!";
 
 			return View();
 		}

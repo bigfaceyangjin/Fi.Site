@@ -4,3 +4,9 @@ E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Interface\obj\Debug\Fi.Inte
 E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Interface\obj\Debug\Fi.Interface.dll
 E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Interface\obj\Debug\Fi.Interface.pdb
 E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Interface\obj\Debug\Fi.Interface.csprojAssemblyReference.cache
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Interface\bin\Debug\Fi.Interface.dll
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Interface\bin\Debug\Fi.Interface.pdb
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Interface\obj\Debug\Fi.Interface.csproj.AssemblyReference.cache
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Interface\obj\Debug\Fi.Interface.csproj.CoreCompileInputs.cache
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Interface\obj\Debug\Fi.Interface.dll
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Interface\obj\Debug\Fi.Interface.pdb

@@ -4,3 +4,9 @@ E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.
 E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.dll
 E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.pdb
 E:\WorkSpace\MyProject\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.csprojAssemblyReference.cache
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Common\bin\Debug\Fi.Common.dll
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Common\bin\Debug\Fi.Common.pdb
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.csproj.AssemblyReference.cache
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.csproj.CoreCompileInputs.cache
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.dll
+D:\朱展\Work\财务对账系统\Fi.Site\Fi.Common\obj\Debug\Fi.Common.pdb
